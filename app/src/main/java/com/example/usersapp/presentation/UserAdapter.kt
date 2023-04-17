@@ -66,6 +66,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.Holder>() {
     inner class Holder(private val binding: ItemUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
+            binding.tvNameInitial.text = user.name.subSequence(0, 1)
             binding.tvName.text = user.name
             binding.tvUserName.text = user.username
             binding.tvEmail.text = user.email
