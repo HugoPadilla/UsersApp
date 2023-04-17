@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Users App</string>
     <string name="search_label">Search</string>
+    <string name="label_loading">Cargando infomación…</string>
+    <string name="label_name">Name</string>
+    <string name="label_phone">Phone</string>
+    <string name="label_profile_photo_desc">Profile photo</string>
+    <string name="label_user_name">User Name</string>
+    <string name="label_email">Email</string>
 </resources>
