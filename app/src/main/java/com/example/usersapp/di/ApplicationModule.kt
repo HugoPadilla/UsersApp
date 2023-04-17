@@ -5,7 +5,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -15,10 +14,9 @@ import javax.inject.Singleton
 object ApplicationModule {
     @Singleton
     @Provides
-    fun provideRetrofit(httpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl("https://api.thecatapi.com/v1/")
+    fun provideRetrofit(): Retrofit = Retrofit.Builder()
+        .baseUrl("https://jsonplaceholder.typicode.com/")
         .addConverterFactory(GsonConverterFactory.create())
-        .client(httpClient)
         .build()
 
     @Singleton
