@@ -8,4 +8,5 @@
     <string name="label_user_name">User Name</string>
     <string name="label_email">Email</string>
     <string name="label_search">Buscar por nombre</string>
+    <string name="label_website">Website</string>
 </resources>

@@ -71,6 +71,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.Holder>() {
             binding.tvUserName.text = user.username
             binding.tvEmail.text = user.email
             binding.tvPhone.text = user.phone
+            binding.tvWebsite.text = user.website
         }
     }
 
