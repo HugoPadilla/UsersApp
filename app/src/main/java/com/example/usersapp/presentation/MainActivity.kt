@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu, menu)
         val menuItem = menu.findItem(R.id.app_bar_search)
         val searchView = menuItem.actionView as SearchView
-        searchView.queryHint = "Search by name"
+        searchView.queryHint = getString(R.string.label_search)
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
