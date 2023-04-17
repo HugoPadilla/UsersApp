@@ -2,6 +2,7 @@ package com.example.usersapp.presentation
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
@@ -40,6 +41,10 @@ class MainActivity : AppCompatActivity() {
     private fun registerObserver() {
         viewModel.users.observe(this) {
             adapter.setData(it)
+        }
+
+        viewModel.isLoading.observe(this) { isLoading ->
+            binding.loadingGroup.visibility = if (isLoading) View.VISIBLE else View.GONE
         }
     }
 
