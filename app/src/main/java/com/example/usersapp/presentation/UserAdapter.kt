@@ -13,6 +13,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.Holder>() {
     fun setData(listUser: List<User>) {
         listUserOrigin.clear()
         listUserOrigin.addAll(listUser)
+        notifyDataSetChanged()
     }
 
     inner class Holder(private val binding: ItemUserBinding) :
