@@ -21,19 +21,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
+        setupRecyclerView()
+        registerObserver()
+
+    }
+
+    private fun setupRecyclerView() {
         adapter = UserAdapter()
         val linearlayout = LinearLayoutManager(this)
         binding.recycler.setHasFixedSize(true)
         binding.recycler.layoutManager = linearlayout
         binding.recycler.adapter = adapter
+    }
 
-
+    private fun registerObserver() {
         viewModel.users.observe(this) {
             adapter.setData(it)
         }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -51,7 +58,6 @@ class MainActivity : AppCompatActivity() {
                 adapter.filter(newText)
                 return false
             }
-
         })
 
         return super.onCreateOptionsMenu(menu)
